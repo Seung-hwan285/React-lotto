@@ -3,6 +3,7 @@ import {render} from "react-dom";
 import {Component} from "react";
 import {generateRandomLotto} from "./component/getRandomLottoNumber";
 import PurchaseAmount from "./component/PurchaseAmount";
+import PurchaseLotto from "./component/PurchaseLotto";
 
 
 class App extends  Component {
@@ -16,54 +17,43 @@ class App extends  Component {
 
 
     this.onPurchaseLotto=this.onPurchaseLotto.bind(this);
-    this.createLotto=this.createLotto.bind(this);
+
   }
 
 
   onPurchaseLotto({numOfLotto}){
 
-
-    console.log(numOfLotto);
-    this.setState({
-
-        lottoBundle : [...Array(numOfLotto).map(()=>this.createLotto())]
-    });
-
-
+    this.setState({lottoList : [...Array(numOfLotto)].map(()=>this.createLotto())});
   }
 
-  createLotto(){
+  createLotto(arr=[]){
+    const number = generateRandomLotto({ min: 1, max: 45 });
+    console.log(number)
 
-    let arr=[];
-    const getRandomNumber = generateRandomLotto(1,45);
-
-
-    if(arr.length ===6){
-      return arr.sort((a,b)=>a-b);
+    if(!arr.includes(number)){
+      arr.push(number);
     }
 
-
-    else if(!arr.includes(getRandomNumber)){
-      arr.push(getRandomNumber);
+    if (arr.length === 6) {
+      return arr.sort((a, b) => a - b);
     }
 
-    console.log(arr);
+    return this.createLotto(arr);
   }
 
   render()
   {
+    const {lottoList}= this.state;
+    console.log(lottoList)
+
+    const isPurchase = Boolean(lottoList.length);
 
     return (
         <div className="app">
-
-
           <h1 className="header">🎱 행운의 로또</h1>
           <main>
-
-
-            <PurchaseAmount  onPurchaseLotto={this.onPurchaseLotto}/>
-            {/*<PurchaseLotto/>*/}
-
+            <PurchaseAmount lottoList={lottoList} onPurchaseLotto={this.onPurchaseLotto}/>
+            {isPurchase ? <PurchaseLotto lottoList={this.state.lottoList}/> : null}
           </main>
         </div>
     );
