@@ -37,7 +37,6 @@ class App extends  Component {
     if (arr.length === 6) {
       return arr.sort((a, b) => a - b);
     }
-
     return this.createLotto(arr);
   }
 
@@ -53,7 +52,7 @@ class App extends  Component {
           <h1 className="header">🎱 행운의 로또</h1>
           <main>
             <PurchaseAmount lottoList={lottoList} onPurchaseLotto={this.onPurchaseLotto}/>
-            {isPurchase ? <PurchaseLotto lottoList={this.state.lottoList}/> : null}
+            {isPurchase ? <PurchaseLotto lottoList={lottoList}/> : null}
           </main>
         </div>
     );

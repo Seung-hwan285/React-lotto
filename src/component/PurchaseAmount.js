@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import "../css/purchase-amount.css"
 class PurchaseAmount extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +54,7 @@ class PurchaseAmount extends Component {
 
                 <form onSubmit={this.onSubmit}>
                     <input
-                        id="purcahse-amount-input"
+                        id="purchase-amount-input"
                         name="input"
                         placeholder="구입금액"
                         onChange={this.onChange}
@@ -64,6 +64,7 @@ class PurchaseAmount extends Component {
 
 
                     <div>{this.state.vaildMessenger}</div>
+
                 </form>
             </div>
         );
