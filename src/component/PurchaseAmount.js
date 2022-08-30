@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../css/purchase-amount.css"
+import "../css/purchase-lotto.css"
 class PurchaseAmount extends Component {
     constructor(props) {
         super(props);

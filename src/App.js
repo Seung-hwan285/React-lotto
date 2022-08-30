@@ -4,6 +4,7 @@ import {Component} from "react";
 import {generateRandomLotto} from "./component/getRandomLottoNumber";
 import PurchaseAmount from "./component/PurchaseAmount";
 import PurchaseLotto from "./component/PurchaseLotto";
+import WinnerNumber from "./component/WinnerNumber";
 
 
 class App extends  Component {
@@ -13,11 +14,12 @@ class App extends  Component {
 
     this.state = {
       lottoList: [],
+      isShowingResult:false,
     };
 
 
     this.onPurchaseLotto=this.onPurchaseLotto.bind(this);
-
+    this.onShowWinningResult=this.onShowWinningResult(this);
   }
 
 
@@ -40,6 +42,15 @@ class App extends  Component {
     return this.createLotto(arr);
   }
 
+
+  onShowWinningResult(){
+
+    this.setState({
+      isShowingResult : true,
+    })
+  }
+
+
   render()
   {
     const {lottoList}= this.state;
@@ -53,6 +64,7 @@ class App extends  Component {
           <main>
             <PurchaseAmount lottoList={lottoList} onPurchaseLotto={this.onPurchaseLotto}/>
             {isPurchase ? <PurchaseLotto lottoList={lottoList}/> : null}
+            {isPurchase ? <WinnerNumber  onShowWinningResult={this.onShowWinningResult}/> :null}
           </main>
         </div>
     );
