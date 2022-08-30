@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height:50vh;
+    height:100%;
 }
 .purchase-lotto-container {
     margin-top: 1.25rem;

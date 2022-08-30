@@ -1,0 +1,15 @@
+.open-btn{
+    display: block;
+
+    margin-top: 2rem;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-style: none;
+}
+
+.result-day{
+    font-weight: bold;
+    font-size: 20px;
+}
