@@ -5,6 +5,7 @@ import {generateRandomLotto} from "./component/getRandomLottoNumber";
 import PurchaseAmount from "./component/PurchaseAmount";
 import PurchaseLotto from "./component/PurchaseLotto";
 import WinnerNumber from "./component/WinnerNumber";
+import WinningResults from "./component/WinningResults";
 
 
 class App extends  Component {
@@ -15,11 +16,13 @@ class App extends  Component {
     this.state = {
       lottoList: [],
       isShowingResult:false,
+
     };
 
 
     this.onPurchaseLotto=this.onPurchaseLotto.bind(this);
-    this.onShowWinningResult=this.onShowWinningResult(this);
+    this.onShowWinningResult=this.onShowWinningResult.bind(this);
+    this.onCloseModal=this.onCloseModal.bind(this);
   }
 
 
@@ -51,12 +54,19 @@ class App extends  Component {
   }
 
 
+  onCloseModal(){
+    this.setState({
+      isShowingResult :false,
+    })
+  }
+
   render()
   {
-    const {lottoList}= this.state;
-    console.log(lottoList)
+    const {lottoList,isShowingResult}= this.state;
+    // console.log(lottoList)
 
     const isPurchase = Boolean(lottoList.length);
+    console.log(isShowingResult);
 
     return (
         <div className="app">
@@ -65,6 +75,7 @@ class App extends  Component {
             <PurchaseAmount lottoList={lottoList} onPurchaseLotto={this.onPurchaseLotto}/>
             {isPurchase ? <PurchaseLotto lottoList={lottoList}/> : null}
             {isPurchase ? <WinnerNumber  onShowWinningResult={this.onShowWinningResult}/> :null}
+            {isShowingResult ? <WinningResults lottoList={lottoList} onCloseModal={this.onCloseModal}/> :null}
           </main>
         </div>
     );

@@ -48,6 +48,12 @@ class PurchaseAmount extends Component {
 
     }
 
+    onCeheckEnter(e){
+        if(e.key ==="Enter"){
+                this.onSubmit();
+        }
+    }
+
     render() {
         return (
             <div>
@@ -58,6 +64,7 @@ class PurchaseAmount extends Component {
                         name="input"
                         placeholder="구입금액"
                         onChange={this.onChange}
+                        onKeyPress={this.onCeheckEnter}
                     />
 
                     <button type="submit" className="input-button">확인</button>
