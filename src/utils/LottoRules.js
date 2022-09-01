@@ -1,6 +1,7 @@
 export const WINNING_NUMBER=[1,2,3,4,5,6];
 export const BUNUS_NUMBER=[10];
 export const RESULT_TABLE_KEY_LIST = [6, 5.5, 5, 4, 3, 2, 1, 0];
+
 export const RESULT_TABLE_DATA = {
     0: {
         DESCRIPTION: '0개',
