@@ -1,5 +1,5 @@
 import {Component} from "react";
-
+import "../css/lotto.css"
 export default class Lotto extends Component{
 
     render() {
