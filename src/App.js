@@ -16,24 +16,29 @@ class App extends  Component {
     this.state = {
       lottoList: [],
       isShowingResult:false,
-
+      drawNumber :{},
     };
 
 
     this.onPurchaseLotto=this.onPurchaseLotto.bind(this);
+    this.setDrawNumber = this.setDrawNumber.bind(this);
     this.onShowWinningResult=this.onShowWinningResult.bind(this);
     this.onCloseModal=this.onCloseModal.bind(this);
+    this.onReset=this.onReset.bind(this);
   }
 
+  setDrawNumber({drawNumber}){
+
+    this.setState({drawNumber :drawNumber});
+  }
 
   onPurchaseLotto({numOfLotto}){
-
     this.setState({lottoList : [...Array(numOfLotto)].map(()=>this.createLotto())});
   }
 
   createLotto(arr=[]){
     const number = generateRandomLotto({ min: 1, max: 45 });
-    console.log(number)
+
 
     if(!arr.includes(number)){
       arr.push(number);
@@ -45,14 +50,11 @@ class App extends  Component {
     return this.createLotto(arr);
   }
 
-
   onShowWinningResult(){
-
     this.setState({
       isShowingResult : true,
     })
   }
-
 
   onCloseModal(){
     this.setState({
@@ -60,13 +62,18 @@ class App extends  Component {
     })
   }
 
+  onReset(){
+    this.setState({lottoList : [],isShowingResult :false});
+  }
+
   render()
   {
-    const {lottoList,isShowingResult}= this.state;
+    const {lottoList,isShowingResult,drawNumber}= this.state;
     // console.log(lottoList)
 
     const isPurchase = Boolean(lottoList.length);
-    console.log(isShowingResult);
+    // console.log(isShowingResult);
+
 
     return (
         <div className="app">
@@ -74,8 +81,15 @@ class App extends  Component {
           <main>
             <PurchaseAmount lottoList={lottoList} onPurchaseLotto={this.onPurchaseLotto}/>
             {isPurchase ? <PurchaseLotto lottoList={lottoList}/> : null}
-            {isPurchase ? <WinnerNumber  onShowWinningResult={this.onShowWinningResult}/> :null}
-            {isShowingResult ? <WinningResults lottoList={lottoList} onCloseModal={this.onCloseModal}/> :null}
+            {isPurchase ? <WinnerNumber   setDrawNumber ={this.setDrawNumber}
+                                          onShowWinningResult={this.onShowWinningResult}/>
+                                            :null}
+
+            {isShowingResult ? <WinningResults lottoList={lottoList}
+                                               onCloseModal={this.onCloseModal}
+                                               onReset={this.onReset}
+                                                drawNumber={drawNumber}
+                                                /> :null}
           </main>
         </div>
     );

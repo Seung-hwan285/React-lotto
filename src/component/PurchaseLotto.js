@@ -21,7 +21,7 @@ export  default  class PurchaseLotto extends Component{
         });
 
 
-        console.log(this.state.isToggle);
+
     }
 
     render() {
@@ -32,7 +32,7 @@ export  default  class PurchaseLotto extends Component{
         if(this.state.isToggle){
 
             displaySelectionName+='toggle';
-            console.log(displaySelectionName);
+
         }
 
         return (

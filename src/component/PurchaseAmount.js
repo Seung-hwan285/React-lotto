@@ -33,7 +33,7 @@ class PurchaseAmount extends Component {
     onChange(e){
 
         const currentInput= e.target.value;
-        console.log(currentInput);
+
         
         if(currentInput < 1000){
             this.setState({

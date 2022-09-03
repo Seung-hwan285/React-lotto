@@ -1,7 +1,9 @@
-export const WINNING_NUMBER=[1,2,3,4,5,6];
-export const BUNUS_NUMBER=[10];
-export const RESULT_TABLE_KEY_LIST = [6, 5.5, 5, 4, 3, 2, 1, 0];
+export const WINNING_NUMBER=[11,16,38,34,21,23];
+export const WINNING_NUMBER_BUNUS_NUMBER=1;
 
+export const RESULT_TABLE_KEY_LIST = [6, 5.5, 5, 4, 3, 2, 1, 0];
+export const BONUS_CHECK_REQUIRED_COUNT = 5;
+export const BONUS_COUNT = 0.5;
 export const RESULT_TABLE_DATA = {
     0: {
         DESCRIPTION: '0개',
