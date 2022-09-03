@@ -56,7 +56,7 @@ class PurchaseAmount extends Component {
 
     render() {
         return (
-            <div>
+            <div className="amount-wrapper">
 
                 <form onSubmit={this.onSubmit}>
                     <input
