@@ -58,6 +58,10 @@ class WinnerNumber extends Component{
                         <LottoBal key={$el} number={$el}/>
                     ))}
 
+
+                    <span className="plus-icon">+</span>
+
+                    <LottoBal number={this.drawNumber.bounsNumber}/>
                 </section>
 
                 {/*<div className="draw-number-section">*/}

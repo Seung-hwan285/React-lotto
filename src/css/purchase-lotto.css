@@ -1,11 +1,14 @@
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height:100%;
+
 }
 .purchase-lotto-container {
     margin-top: 1.25rem;
+    position: relative;
 }
 
 .header{
@@ -34,8 +37,10 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
 .display-section.toggle{
     flex-direction: column;
+
 }
 
 .lotto-text{

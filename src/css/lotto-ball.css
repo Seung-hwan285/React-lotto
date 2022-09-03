@@ -27,3 +27,10 @@
 .thirty{
     border-color: #61dafb;
 }
+
+.plus-icon{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
