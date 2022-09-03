@@ -52,9 +52,17 @@ class WinnerNumber extends Component{
 
 
 
-                <div className="draw-number-section">
-                    <span>당첨번호 {WINNING_NUMBER.join(', ')} 보너스번호 {WINNING_NUMBER_BUNUS_NUMBER}</span>
-                </div>
+                <section className="draw-number-section">
+
+                    {this.drawNumber.winningNumbers.map(($el)=>(
+                        <LottoBal key={$el} number={$el}/>
+                    ))}
+
+                </section>
+
+                {/*<div className="draw-number-section">*/}
+                {/*    <span>당첨번호 {WINNING_NUMBER.join(', ')} 보너스번호 {WINNING_NUMBER_BUNUS_NUMBER}</span>*/}
+                {/*</div>*/}
 
                 <button type="button" className="open-btn" onClick={this.props.onShowWinningResult}>당첨결과 확인</button>
             </div>
@@ -65,6 +73,28 @@ class WinnerNumber extends Component{
     }
 }
 
+
+function LottoBal(props){
+
+    const {number}=props;
+    let ballClassName;
+
+    if(number < 10){
+        ballClassName='zeros';
+    }else if(number <20){
+        console.log(number);
+        ballClassName='tens';
+    }else if(number < 30){
+        ballClassName='twenties';
+    }else if(number <40){
+        ballClassName='thirty';
+    }else{
+        ballClassName='forty';
+    }
+
+
+    return <span className={`lotto-ball ${ballClassName}`}>{number <10 ? `0${number}`:number}</span>
+}
 
 
 export default WinnerNumber;

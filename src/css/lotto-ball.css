@@ -1,0 +1,29 @@
+.draw-number-section{
+    margin-top: 30px;
+}
+.lotto-ball{
+
+    margin: 0 0 9px;
+    padding: 23px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #fff;
+    font-size: 0.8rem;
+    border-radius: 50px;
+}
+
+.zeros {
+    border-color: black;
+}
+
+.tens {
+    border-color:#ada5d7
+            ;
+}
+.twenties {
+    border-color: #77a1fe;
+}
+
+.thirty{
+    border-color: #61dafb;
+}
