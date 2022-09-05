@@ -19,9 +19,6 @@ export  default  class PurchaseLotto extends Component{
         this.setState({
             isToggle : e.target.checked,
         });
-
-
-
     }
 
     render() {
