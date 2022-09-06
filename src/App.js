@@ -4,6 +4,7 @@ import {Component, useEffect, useState} from "react";
 
 import PurchaseAmount from "./component/PurchaseAmount";
 import createLotto from "./service/createLotto";
+import getLottoList from "./service/getLottoList";
 
 
 
@@ -15,11 +16,6 @@ function App(){
   const isPurchesed = Boolean(lottoList.length);
 
 
-  const onPurchaseLotto=({numOfLotto})=>{
-
-      setLottoList({lottoList : [...Array(numOfLotto)].map(()=>createLotto())});
-
-  }
 
   console.log(lottoList);
 
@@ -30,7 +26,8 @@ function App(){
 
         <h1 className="header">🎱  행운의 로또</h1>
       <main>
-            <PurchaseAmount onPurchaseLotto ={onPurchaseLotto}/>
+
+            <PurchaseAmount setLottoList={setLottoList}/>
 
 
       </main>

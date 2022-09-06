@@ -1,70 +1,67 @@
 import React, {Component, useState} from 'react';
 import "../css/purchase-lotto.css"
-import payForLotto from "../service/payForLotto";
-import PayForLotto from "../service/payForLotto";
-import PayOfLotto from "../service/payForLotto";
 import PayLotto from "../service/payForLotto";
+import getLottoList from "../service/getLottoList";
 
 
-function PurchaseAmount({onPurchaseLotto}){
+function PurchaseAmount({setLottoList}){
 
 
     const [vaildMessenger,setVaildMessenger] =useState('');
 
+
     const onSubmit=(e)=>{
-
         e.preventDefault();
-
 
         const money = e.target.input.value;
 
-        const {change, numOfLotto} = PayLotto(money);
 
-        if(change >0){
-            alert(`현재 거스름돈은 ${change} 입니다`);
+        const {change ,numOfLotto} = PayLotto(money);
+
+
+        if(change > 0){
+            alert(`현재 거스름 돈은 ${change} 원입니다`);
         }
-        onPurchaseLotto({numOfLotto});
+
+        setLottoList(getLottoList({numOfLotto}));
     }
 
-
-
     const onChange=(e)=>{
+        console.log(e.target.value);
 
-
-        const currentValue = e.target.value;
+        const currentValue =e.target.value;
+        console.log(currentValue);
 
         if(currentValue <1000){
-            setVaildMessenger('1000원 미만은 구입 불가입니다.');
-
+            setVaildMessenger(`1000원 미만은 입력 불가입니다.`);
             return;
         }
 
         setVaildMessenger('');
-
     }
 
     return(
 
         <div className="amount-wrapper">
             <form onSubmit={onSubmit}>
-                
-                <input type="text"
-                       name="input"
-                       placeholder="구입금액"
-                       onChange={onChange}
+
+                <input
+
+                    type="name"
+                    name="input"
+                    placeholder="구입 금액"
+                    onChange={onChange}
                 />
 
-                <button
-                    type="submit"
-                    className="input-button"
-                >확인</button>
+
+                <button className="input-button" type="submit">확인</button>
                 <div>{vaildMessenger}</div>
+
             </form>
 
 
+
         </div>
-
-
     )
 }
 
