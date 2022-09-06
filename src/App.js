@@ -5,6 +5,7 @@ import {Component, useEffect, useState} from "react";
 import PurchaseAmount from "./component/PurchaseAmount";
 import createLotto from "./service/createLotto";
 import getLottoList from "./service/getLottoList";
+import PurchaseLotto from "./component/PurchaseLotto";
 
 
 
@@ -29,6 +30,7 @@ function App(){
 
             <PurchaseAmount setLottoList={setLottoList}/>
 
+          {isPurchesed ? <PurchaseLotto lottolist={lottoList}/> :null}
 
       </main>
       </div>

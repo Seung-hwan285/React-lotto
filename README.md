@@ -23,7 +23,7 @@
 - 함수형 컴포넌트로 변환 
     - [x] Lotto.js  함수형  
     - [x] PurchaseAmount 함수형
-    - [ ] PurchaseLotto 함수형
+    - [x] PurchaseLotto 함수형
     - [ ] WinnerNumber 함수형
     - [ ] WinningResult 함수형
 
@@ -33,3 +33,6 @@
 
 # 4번
 - Cypress 테스트
+
+# 전체 프로젝트 현황판
+https://www.notion.so/React-db2d524684a94826a10521fa5bc6b496
