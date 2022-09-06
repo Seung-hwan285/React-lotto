@@ -4,6 +4,7 @@ import "../css/purchase-lotto.css"
 import Lotto from "./Lotto";
 import LottoGenerator from "../utils/LottoGenerator";
 import GetLottoCount from "./getLottoCount";
+import GetLottoCheckBox from "./getLottoCheckBox";
 
 
 
@@ -24,19 +25,10 @@ function PurchaseLotto({lottolist}){
 
     return(
         <div className="purchase-lotto-container">
-            {/*몇개 구매했는지 ,이모지 보여주는 selection*/}
-            <section>
-                <GetLottoCount lottolist={lottolist} onChangeToggle={onChangeToggle}/>
-                <input id="switch" type="checkbox" onChange={onChangeToggle}/>
-                <label htmlFor="switch" className="label-on-off"></label>
-            </section>
 
-        {/*    로또 번호 보여주는 selection*/}
-        <section className={displaySectionName}>
-            <LottoGenerator lottolist={lottolist}/>
-        </section>
-
-
+            <GetLottoCount lottolist={lottolist} onChangeToggle={onChangeToggle}/>
+            <GetLottoCheckBox onChangeToggle={onChangeToggle}/>
+            <LottoGenerator lottolist={lottolist} displaySectionName={displaySectionName}/>
         </div>
     )
 }
