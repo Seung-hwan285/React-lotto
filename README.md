@@ -24,7 +24,7 @@
     - [x] Lotto.js  함수형  
     - [x] PurchaseAmount 함수형
     - [x] PurchaseLotto 함수형
-    - [ ] WinnerNumber 함수형
+    - [x] WinnerNumber 함수형
     - [ ] WinningResult 함수형
 
 # 3번

@@ -1,3 +1,4 @@
+
 export const WINNING_NUMBER=[11,16,38,34,21,23];
 export const WINNING_NUMBER_BUNUS_NUMBER=1;
 
@@ -38,3 +39,10 @@ export const RESULT_TABLE_DATA = {
         PRIZE: 2000000000,
     }
 }
+
+export const getDrawNumber={
+
+    winngNumber : WINNING_NUMBER,
+    bounsNumber : WINNING_NUMBER_BUNUS_NUMBER
+}
+

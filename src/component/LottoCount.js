@@ -1,4 +1,4 @@
-function GetLottoCount({lottolist,onChangeToggle}){
+function LottoCount({lottolist,onChangeToggle}){
 
     return(
 
@@ -19,4 +19,4 @@ function GetLottoCount({lottolist,onChangeToggle}){
     )
 }
 
-export default GetLottoCount;
+export default LottoCount;

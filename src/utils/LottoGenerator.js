@@ -1,5 +1,6 @@
-import Lotto from "../component/Lotto";
+
 import React from "react";
+import Lotto from "./Lotto";
 
 
 function LottoGenerator({lottolist,displaySectionName}){

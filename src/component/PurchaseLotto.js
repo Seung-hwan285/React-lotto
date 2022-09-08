@@ -1,10 +1,10 @@
 import React, {Component, useState} from "react";
 
 import "../css/purchase-lotto.css"
-import Lotto from "./Lotto";
+
 import LottoGenerator from "../utils/LottoGenerator";
-import GetLottoCount from "./getLottoCount";
-import GetLottoCheckBox from "./getLottoCheckBox";
+import LottoCount from "./LottoCount";
+import LottoCheckBox from "./LottoCheckBox";
 
 
 
@@ -26,64 +26,10 @@ function PurchaseLotto({lottolist}){
     return(
         <div className="purchase-lotto-container">
 
-            <GetLottoCount lottolist={lottolist} onChangeToggle={onChangeToggle}/>
-            <GetLottoCheckBox onChangeToggle={onChangeToggle}/>
+            <LottoCount lottolist={lottolist} onChangeToggle={onChangeToggle}/>
+            <LottoCheckBox onChangeToggle={onChangeToggle}/>
             <LottoGenerator lottolist={lottolist} displaySectionName={displaySectionName}/>
         </div>
     )
 }
 export default PurchaseLotto;
-
-//
-// export  default  class PurchaseLotto extends Component{
-//     constructor(props) {
-//         super(props);
-//         this.state={
-//             isToggle : false
-//         }
-//
-//         this.onChangeToggleButton=this.onChangeToggleButton.bind(this);
-//     }
-//
-//
-//     onChangeToggleButton(e){
-//
-//         this.setState({
-//             isToggle : e.target.checked,
-//         });
-//     }
-//
-//     render() {
-//
-//         const {lottoList} =this.props;
-//         let displaySelectionName = "display-section";
-//
-//         if(this.state.isToggle){
-//
-//             displaySelectionName+='toggle';
-//
-//         }
-//
-//         return (
-//             <div className="purchase-lotto-container">
-//                 <section>
-//                     <span className="lotto-text">총 {lottoList.length}개 구매하였습니다.</span>
-//
-//
-//                     {lottoList.map(($el)=>(
-//                         <span className="lotto-emoji">🎟️</span>
-//                     ))}
-//                     <input id="switch" type="checkbox" onChange={this.onChangeToggleButton}/>
-//                     <label htmlFor="switch" className="label-on-off"></label>
-//                 </section>
-//
-//                 <section className={displaySelectionName}>
-//
-//                     {lottoList.map(($el,index)=>(
-//                         <Lotto lotto={$el} key={index}/>
-//                     ))}
-//                 </section>
-//             </div>
-//         );
-//     }
-// }

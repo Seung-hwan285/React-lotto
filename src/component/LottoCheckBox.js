@@ -1,4 +1,4 @@
-function GetLottoCheckBox({onChangeToggle}){
+function LottoCheckBox({onChangeToggle}){
 
     return(
 
@@ -11,4 +11,4 @@ function GetLottoCheckBox({onChangeToggle}){
     )
 }
 
-export default GetLottoCheckBox;
+export default LottoCheckBox;

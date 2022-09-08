@@ -1,8 +1,8 @@
-import {generateRandomLotto} from "../component/getRandomLottoNumber";
+import {GenerateRandomLotto} from "../component/GeneratorRandomLotto";
 
 function createLotto(arr=[]){
 
-    const number = generateRandomLotto({min : 1, max :45});
+    const number = GenerateRandomLotto({min : 1, max :45});
 
     if(!arr.includes(number)){
         arr.push(number);

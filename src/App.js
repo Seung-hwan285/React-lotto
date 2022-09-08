@@ -6,19 +6,21 @@ import PurchaseAmount from "./component/PurchaseAmount";
 import createLotto from "./service/createLotto";
 import getLottoList from "./service/getLottoList";
 import PurchaseLotto from "./component/PurchaseLotto";
+import WinnerNumber from "./component/WinnerNumber";
 
 
 
 function App(){
   const [lottoList,setLottoList] = useState([]);
   const [isShowingResult,setIsShowingResult]=useState(false);
-  const [drawNumber,setDrawNumber]=useState({});
 
   const isPurchesed = Boolean(lottoList.length);
 
 
 
-  console.log(lottoList);
+  const onShowWinningResult=(e)=>{
+      setIsShowingResult(!e.target.value);
+  }
 
 
   return(
@@ -28,10 +30,15 @@ function App(){
         <h1 className="header">🎱  행운의 로또</h1>
       <main>
 
-            <PurchaseAmount setLottoList={setLottoList}/>
+          <PurchaseAmount setLottoList={setLottoList}/>
 
           {isPurchesed ? <PurchaseLotto lottolist={lottoList}/> :null}
 
+          {isPurchesed ? <WinnerNumber
+
+              onShowWinningResult={onShowWinningResult}
+              lottolist={lottoList}
+          /> :null}
       </main>
       </div>
   )
