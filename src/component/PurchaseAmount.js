@@ -2,12 +2,17 @@ import React, {Component, useState} from 'react';
 import "../css/purchase-lotto.css"
 import PayLotto from "../service/payForLotto";
 import getLottoList from "../service/getLottoList";
+import {useDispatch, useSelector} from "react-redux";
+import {useRecoilState} from "recoil";
+import {textState} from "../atom/atom";
 
 
 function PurchaseAmount({setLottoList}){
 
+    // atom 읽고 쓰게 하기 위해서는 useRecoilState 사용한다.
+    // const [vaildMessenger,setVaildMessenger] =useState('');
 
-    const [vaildMessenger,setVaildMessenger] =useState('');
+    const [vaildMessenger, setVaildMessenger] = useRecoilState(textState);
 
 
     const onSubmit=(e)=>{
@@ -24,16 +29,18 @@ function PurchaseAmount({setLottoList}){
         }
 
         setLottoList(getLottoList({numOfLotto}));
+
+
     }
 
     const onChange=(e)=>{
-        console.log(e.target.value);
 
         const currentValue =e.target.value;
-        console.log(currentValue);
 
         if(currentValue <1000){
+
             setVaildMessenger(`1000원 미만은 입력 불가입니다.`);
+
             return;
         }
 

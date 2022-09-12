@@ -21,14 +21,19 @@
 
 # 2번
 - 함수형 컴포넌트로 변환 
-    - [x] Lotto.js  함수형  
-    - [x] PurchaseAmount 함수형
-    - [x] PurchaseLotto 함수형
-    - [x] WinnerNumber 함수형
-    - [x] WinningResult 함수형
+    - [x] Lotto.js  함수형 리펙토링
+    - [x] PurchaseAmount 함수형 리펙토링
+    - [x] PurchaseLotto 함수형 리펙토링
+    - [x] WinnerNumber 함수형 리펙토링
+    - [x] WinningResult 함수형 리펙토링
 
 # 3번
-- Redux , SCSS 사용해보기
+- Recoil , SCSS 사용해보기
+  - [x] PurchaseAmount 상태관리 Recoil 리펙토링  
+  - [ ] Lotto.js 상태관리 Recoil 리펙토링
+  - [ ] PurchaseLotto 상태관리 Recoil 리펙토링
+  - [ ] WinnerNumber 상태관리 Recoil 리펙토링
+  - [ ] WinningResult 상태관리 Recoil 리펙토링
 
 # 4번
 - TypeScript 변환 

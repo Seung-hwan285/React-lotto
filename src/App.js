@@ -8,6 +8,7 @@ import getLottoList from "./service/getLottoList";
 import PurchaseLotto from "./component/PurchaseLotto";
 import WinnerNumber from "./component/WinnerNumber";
 import WinningResults from "./component/WinningResults";
+import {RecoilRoot} from "recoil";
 
 
 
@@ -36,6 +37,8 @@ function App(){
 
   return(
 
+
+<RecoilRoot>
       <div className="app">
 
         <h1 className="header">🎱  행운의 로또</h1>
@@ -60,6 +63,7 @@ function App(){
           />: null}
       </main>
       </div>
+</RecoilRoot>
   )
 }
 
