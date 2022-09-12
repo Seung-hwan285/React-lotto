@@ -32,8 +32,6 @@ function WinningResults({onCloseModal,onReset,lottoList}){
             // 같은 번호가 몇개나오는지 체크
             let numOfMatch = lotto.reduce((a,b)=>a+ Number(winningNumbers.includes(b)),0);
 
-
-
             if( numOfMatch === BONUS_CHECK_REQUIRED_COUNT && lotto.includes(bonunsNumber)){
                 numOfMatch+=BONUS_COUNT;
             }
@@ -46,12 +44,7 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 
     useEffect(()=>{
         const getMatch = getMatchCount();
-
         setMatchCount(getMatch);
-
-
-        console.log(getMatch);
-
     },[]);
 
 
@@ -79,7 +72,7 @@ function WinningResults({onCloseModal,onReset,lottoList}){
                 </table>
 
             </div>
-            <button type="button" onClick={onReset}>다시 시작</button>
+            <button type="button" className="result-btn" onClick={onReset}>다시 시작</button>
         </div>
     )
 }

@@ -34,3 +34,15 @@
     text-align: right;
     margin-top: 4rem;
 }
+.result-btn{
+    font-size: 20px;
+    position: fixed;
+    left: 9rem;
+    bottom: 3rem;
+}
+
+.winning-result-inner{
+    position: fixed;
+    left: 22rem;
+    bottom: 29rem;
+}
