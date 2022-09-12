@@ -5,23 +5,23 @@ import "../css/lotto-ball.css"
 import LottoBal from "../utils/LottoBal";
 
 
-function WinnerNumber({setDrawNumber,onShowWinningResult,lottolist}){
+function WinnerNumber({setDrawNumber,lottolist,onShowModal}){
 
     const [isShowWinningNumbers,setShow] =useState(false);
-
 
     // [x] 3초있다가 로또 고정 당첨번호 출력
     useEffect(()=>{
 
         setTimeout(()=>{
-            handlerShoWinningNumber();
+            onShoWinningNumber();
         },2000);
 
 
     },[]);
 
 
-    const handlerShoWinningNumber=()=>{
+
+    const onShoWinningNumber=()=>{
         setShow(true);
     }
 
@@ -43,6 +43,8 @@ function WinnerNumber({setDrawNumber,onShowWinningResult,lottolist}){
                 <LottoBal number={getDrawNumber.bounsNumber}/>
             }
         </section>
+
+            <button type="button" className="open-btn" onClick={onShowModal} >당첨결과 확인</button>
             </div>
     ) :(
         <span>잠시만 기다려주세요</span>

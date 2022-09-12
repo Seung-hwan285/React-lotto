@@ -1,4 +1,4 @@
-
+# 리액트 연습 (React Hooks , Redux , SCSS)
 
 # 1번
 
@@ -25,14 +25,13 @@
     - [x] PurchaseAmount 함수형
     - [x] PurchaseLotto 함수형
     - [x] WinnerNumber 함수형
-    - [ ] WinningResult 함수형
+    - [x] WinningResult 함수형
 
 # 3번
 - Redux , SCSS 사용해보기
 
-
 # 4번
-- Cypress 테스트
+- TypeScript 변환 
 
 # 전체 프로젝트 현황판
 https://www.notion.so/React-db2d524684a94826a10521fa5bc6b496

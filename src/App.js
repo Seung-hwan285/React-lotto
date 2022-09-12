@@ -7,21 +7,32 @@ import createLotto from "./service/createLotto";
 import getLottoList from "./service/getLottoList";
 import PurchaseLotto from "./component/PurchaseLotto";
 import WinnerNumber from "./component/WinnerNumber";
+import WinningResults from "./component/WinningResults";
 
 
 
 function App(){
   const [lottoList,setLottoList] = useState([]);
-  const [isShowingResult,setIsShowingResult]=useState(false);
-
   const isPurchesed = Boolean(lottoList.length);
 
 
+  const [isShowModal,setIsShowModal]= useState(false);
 
-  const onShowWinningResult=(e)=>{
-      setIsShowingResult(!e.target.value);
+
+  const onShowModal=(e)=>{
+      setIsShowModal(!e.target.value);
   }
 
+  const onCloseModal=(e)=>{
+      setIsShowModal(false);
+  }
+
+
+
+  const onReset=()=>{
+      setIsShowModal(false);
+      setLottoList([]);
+  }
 
   return(
 
@@ -32,13 +43,21 @@ function App(){
 
           <PurchaseAmount setLottoList={setLottoList}/>
 
+
           {isPurchesed ? <PurchaseLotto lottolist={lottoList}/> :null}
 
           {isPurchesed ? <WinnerNumber
-
-              onShowWinningResult={onShowWinningResult}
+              onShowModal = {onShowModal}
               lottolist={lottoList}
+
           /> :null}
+
+          {isShowModal ? <WinningResults
+              onReset={onReset}
+            onCloseModal={onCloseModal}
+
+              lottoList={lottoList}
+          />: null}
       </main>
       </div>
   )

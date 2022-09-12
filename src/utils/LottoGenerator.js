@@ -6,7 +6,7 @@ import Lotto from "./Lotto";
 function LottoGenerator({lottolist,displaySectionName}){
 
 
-    console.log(lottolist);
+
     return(
 
         <section className={displaySectionName}>

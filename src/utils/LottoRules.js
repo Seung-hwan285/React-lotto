@@ -6,6 +6,7 @@ export const RESULT_TABLE_KEY_LIST = [6, 5.5, 5, 4, 3, 2, 1, 0];
 export const BONUS_CHECK_REQUIRED_COUNT = 5;
 export const BONUS_COUNT = 0.5;
 export const RESULT_TABLE_DATA = {
+
     0: {
         DESCRIPTION: '0개',
         PRIZE: 0,

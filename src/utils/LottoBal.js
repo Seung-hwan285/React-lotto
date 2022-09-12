@@ -3,7 +3,7 @@ function LottoBal({number}){
 
     let ballClassName;
 
-    console.log();
+
     if(number < 10){
         ballClassName='zeros';
     }else if(number <20){

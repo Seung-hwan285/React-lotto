@@ -12,7 +12,7 @@ function createLotto(arr=[]){
         return arr.sort((a,b)=>a-b);
     }
 
-    console.log(arr);
+
 
     return  createLotto(arr);
 }
