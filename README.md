@@ -30,8 +30,8 @@
 # 3번
 - Recoil , SCSS 사용해보기
   - [x] PurchaseAmount 상태관리 Recoil 리펙토링
-  - [ ] PurchaseLotto 상태관리 Recoil 리펙토링
-  - [ ] WinnerNumber 상태관리 Recoil 리펙토링
+  - [x] PurchaseLotto 상태관리 Recoil 리펙토링
+  - [x] WinnerNumber 상태관리 Recoil 리펙토링
   - [ ] WinningResult 상태관리 Recoil 리펙토링
 
 # 4번

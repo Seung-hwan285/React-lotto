@@ -10,3 +10,8 @@ export  const ToggleState =atom({
     key:'toggle',
     default: false,
 })
+
+export const showState=atom({
+    key:'show',
+    default : false,
+})

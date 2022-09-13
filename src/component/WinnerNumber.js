@@ -3,11 +3,13 @@ import {WINNING_NUMBER_BUNUS_NUMBER, WINNING_NUMBER, getDrawNumber} from "../uti
 import "../css/winning-number.css"
 import "../css/lotto-ball.css"
 import LottoBal from "../utils/LottoBal";
+import {showState} from "../atom/atom";
+import {useRecoilState} from "recoil";
 
 
 function WinnerNumber({onShowModal}){
 
-    const [isShowWinningNumbers,setShow] =useState(false);
+    const [isShowWinningNumbers,setShow] =useRecoilState(showState);
 
     // [x] 3초있다가 로또 고정 당첨번호 출력
     useEffect(()=>{
