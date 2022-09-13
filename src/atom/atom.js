@@ -15,3 +15,9 @@ export const showState=atom({
     key:'show',
     default : false,
 })
+
+
+export const matchCountState=atom({
+    key : 'match',
+    default : {},
+})

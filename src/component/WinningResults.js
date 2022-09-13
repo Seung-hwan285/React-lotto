@@ -7,6 +7,8 @@ import {
     RESULT_TABLE_KEY_LIST, WINNING_NUMBER, WINNING_NUMBER_BUNUS_NUMBER
 } from "../utils/LottoRules";
 import "../css/winning-result.css"
+import {useRecoilState} from "recoil";
+import {matchCountState} from "../atom/atom";
 
 
 function WinningResults({onCloseModal,onReset,lottoList}){
@@ -14,7 +16,7 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 
 
 
-    const [matchCount,setMatchCount] =useState({});
+    const [matchCount,setMatchCount] =useRecoilState(matchCountState);
 
 
     const getMatchCount=()=>{
