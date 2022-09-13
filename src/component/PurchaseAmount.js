@@ -1,5 +1,5 @@
 import React, {Component, useState} from 'react';
-import "../css/purchase-lotto.css"
+
 import PayLotto from "../service/payForLotto";
 import getLottoList from "../service/getLottoList";
 import {useDispatch, useSelector} from "react-redux";
@@ -57,6 +57,7 @@ function PurchaseAmount({setLottoList}){
                     type="name"
                     name="input"
                     placeholder="구입 금액"
+                    className="purchase-amount-input"
                     onChange={onChange}
                 />
 

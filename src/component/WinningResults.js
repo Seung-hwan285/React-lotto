@@ -6,7 +6,7 @@ import {
     RESULT_TABLE_DATA,
     RESULT_TABLE_KEY_LIST, WINNING_NUMBER, WINNING_NUMBER_BUNUS_NUMBER
 } from "../utils/LottoRules";
-import "../css/winning-result.css"
+import "../css/winning-result.scss"
 import {useRecoilState} from "recoil";
 import {matchCountState} from "../atom/atom";
 

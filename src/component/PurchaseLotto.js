@@ -1,6 +1,7 @@
 import React, {Component, useState} from "react";
 
-import "../css/purchase-lotto.css"
+
+import "../css/purchase-lotto.scss"
 
 import LottoGenerator from "../utils/LottoGenerator";
 import LottoCount from "./LottoCount";

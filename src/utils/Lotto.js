@@ -1,5 +1,5 @@
 import {Component} from "react";
-import "../css/lotto.css"
+import "../css/lotto.scss"
 
 
 function Lotto({lotto}){

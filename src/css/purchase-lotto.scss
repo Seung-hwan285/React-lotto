@@ -1,0 +1,185 @@
+//------------------------------------------------------------------------------mixin//
+@mixin background-color($color:white) {
+    background-color: $color;
+}
+
+@mixin width-height($width : 0 ,$height :0){
+    width: $width;
+    height: $height;
+}
+
+@mixin height($height : 0){
+    height: $height;
+}
+@mixin width($width : 0){
+    width: $width;
+}
+
+@mixin display-show($mode: block){
+    display: $mode;
+}
+
+@mixin flex-center{
+    justify-content: center;
+    align-content: center;
+}
+@mixin margin($top : 0 , $right : 0 , $bottom : 0 , $left :0){
+    margin: $top $right $bottom $left;
+}
+@mixin padding($top : 0 , $right : 0 , $bottom : 0 , $left :0){
+
+
+
+    @if($top >0 && $right >0){
+        padding: $top $right;
+    }
+    @else if $top>0{
+        padding: $top;
+    }
+    @else {
+        padding: $top $right $bottom $left;
+
+    }
+
+
+
+}
+
+@mixin font-size($size){
+    font-size: $size;
+}
+
+@mixin position($current){
+    position: $current;
+}
+//------------------------------------------------------------------------------mixin//
+
+
+body {
+    @include display-show(flex);
+    @include height(100%);
+    @include flex-center;
+}
+
+.purchase-lotto-container {
+    @include margin(1.25rem);
+    position: relative;
+}
+
+.header{
+    text-align: center;
+}
+
+.amount-wrapper{
+    @include display-show(flex);
+    @include flex-center;
+
+}
+
+
+.purchase-amount-input{
+    @include width-height(300px,30px);
+    @include background-color(rgb(233,233,233));
+    @include padding(2px);
+    @include font-size(13px);
+    border: none;
+    border-radius: 15px;
+    /*outline: none;*/
+}
+
+
+
+.display-section{
+    @include display-show(flex);
+    flex-wrap: wrap;
+}
+
+.display-section.toggle{
+    flex-direction: column;
+}
+
+.lotto-text{
+    @include display-show(inline-block);
+    @include width(100%);
+    @include font-size(1rem);
+    @include margin(0,0,0.5rem,0);
+
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 2rem;
+}
+
+.lotto-emoji{
+    @include font-size(20px);
+}
+
+.input-button{
+    @include background-color(skyblue);
+    @include font-size(1rem);
+    @include padding(5px,10px);
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+    cursor: pointer;
+
+}
+
+
+
+.display-section{
+   @include display-show(none);
+}
+
+
+/*버튼디자인*/
+input[type=checkbox]{
+    @include width-height(0,0);
+    visibility: hidden;
+}
+
+.label-on-off{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+
+label {
+
+    @include width-height(80px,30px);
+    @include position(relative);
+    @include display-show(block);
+    background: grey;
+    cursor: pointer;
+    border-radius: 100px;
+
+}
+
+label:after {
+    @include position(absolute);
+    @include width-height(30px,20px);
+    content: '';
+    top: 5px;
+    left: 5px;
+    background: #fff;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+input:checked + label {
+    @include background-color(skyblue);
+}
+
+input:checked + label:after {
+    /*오른쪽으로 이동*/
+    left: calc(100% - 5px);
+    /*왼쪽으로 이동*/
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    @include width(130px);
+}
+
+
+/*로또 랜덤 번호*/

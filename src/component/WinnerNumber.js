@@ -1,11 +1,13 @@
 import {Component, useEffect, useState} from "react";
 import {WINNING_NUMBER_BUNUS_NUMBER, WINNING_NUMBER, getDrawNumber} from "../utils/LottoRules";
-import "../css/winning-number.css"
-import "../css/lotto-ball.css"
+
 import LottoBal from "../utils/LottoBal";
 import {showState} from "../atom/atom";
 import {useRecoilState} from "recoil";
 
+import "../css/winning-number.scss"
+import "../css/lotto.scss"
+import "../css/lotto-ball.scss"
 
 function WinnerNumber({onShowModal}){
 

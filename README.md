@@ -28,16 +28,18 @@
     - [x] WinningResult 함수형 리펙토링
 
 # 3번
-- Recoil , SCSS 변환
+- Recoil 변환
   - [x] PurchaseAmount 상태관리 Recoil 리펙토링
   - [x] PurchaseLotto 상태관리 Recoil 리펙토링
   - [x] WinnerNumber 상태관리 Recoil 리펙토링
   - [x] WinningResult 상태관리 Recoil 리펙토링
   
-  - [ ] PurchaseAmount SCSS 적용
-  - [ ] PurchaseLotto SCSS 적용
-  - [ ] WinnerNumber SCSS 적용
-  - [ ] WinningResult SCSS 적용
+
+- SCSS 변환
+  - [x] PurchaseLotto  ( CSS -> SCSS )
+  - [ ] PurchaseAmount ( CSS -> SCSS )
+  - [ ] WinnerNumber ( CSS -> SCSS )
+  - [ ] WinningResult ( CSS -> SCSS )
  
 # 4번
 - TypeScript 변환 
