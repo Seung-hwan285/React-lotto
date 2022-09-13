@@ -1,8 +1,12 @@
 import {atom} from "recoil";
 
 export const textState = atom({
-    key: 'textState', // unique ID (with respect to other atoms/selectors)
-    default: '', // default value (aka initial value)
+    key: 'textState',
+    default: '',
 });
 
 
+export  const ToggleState =atom({
+    key:'toggle',
+    default: false,
+})

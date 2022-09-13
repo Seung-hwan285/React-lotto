@@ -5,15 +5,16 @@ import "../css/purchase-lotto.css"
 import LottoGenerator from "../utils/LottoGenerator";
 import LottoCount from "./LottoCount";
 import LottoCheckBox from "./LottoCheckBox";
+import {useRecoilState} from "recoil";
+import {ToggleState} from "../atom/atom";
 
 
 
 function PurchaseLotto({lottolist}){
 
-    const [isToggle,setToggle] =useState(false);
+    const [isToggle,setToggle] =useRecoilState(ToggleState);
 
     let displaySectionName="display-section";
-
 
     if(isToggle){
         displaySectionName+='toggle';

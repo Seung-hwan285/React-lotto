@@ -1,4 +1,4 @@
-function LottoCount({lottolist,onChangeToggle}){
+function LottoCount({lottolist}){
 
     return(
 

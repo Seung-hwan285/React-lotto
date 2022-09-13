@@ -5,7 +5,7 @@ import "../css/lotto-ball.css"
 import LottoBal from "../utils/LottoBal";
 
 
-function WinnerNumber({setDrawNumber,lottolist,onShowModal}){
+function WinnerNumber({onShowModal}){
 
     const [isShowWinningNumbers,setShow] =useState(false);
 

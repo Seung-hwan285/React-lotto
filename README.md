@@ -1,4 +1,4 @@
-# 리액트 연습 (React Hooks , Redux , SCSS)
+# 리액트 연습 (React Hooks , Recoil , SCSS)
 
 # 1번
 
@@ -29,8 +29,7 @@
 
 # 3번
 - Recoil , SCSS 사용해보기
-  - [x] PurchaseAmount 상태관리 Recoil 리펙토링  
-  - [ ] Lotto.js 상태관리 Recoil 리펙토링
+  - [x] PurchaseAmount 상태관리 Recoil 리펙토링
   - [ ] PurchaseLotto 상태관리 Recoil 리펙토링
   - [ ] WinnerNumber 상태관리 Recoil 리펙토링
   - [ ] WinningResult 상태관리 Recoil 리펙토링
