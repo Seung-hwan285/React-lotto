@@ -1,36 +1,57 @@
+
+@mixin border-color($color :white){
+    border-color: $color;
+}
+@mixin background-color($color:white) {
+    background-color: $color;
+}
+
+@mixin border-radius($pixel) {
+    border-radius: $pixel;
+}
+
+@mixin plus-icon(){
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
 .draw-number-section{
     margin-top: 30px;
 }
+
+
 .lotto-ball{
+    @include   background-color(#fff);
+    @include border-radius(50px);
 
     margin: 0 0 9px;
     padding: 23px;
     border-style: solid;
     border-width: 2px;
-    background-color: #fff;
     font-size: 0.8rem;
-    border-radius: 50px;
+
 }
 
+
 .zeros {
-    border-color: black;
+    @include  border-color(black);
 }
 
 .tens {
-    border-color:#ada5d7
-            ;
+    @include border-color(#ada5d7);
 }
 .twenties {
-    border-color: #77a1fe;
+    @include border-color(#77a1fe);
 }
 
 .thirty{
-    border-color: #61dafb;
+    @include border-color(#61dafb);
 }
 
 .plus-icon{
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 1rem;
-    margin-right: 1rem;
+
+    @include plus-icon();
 }
