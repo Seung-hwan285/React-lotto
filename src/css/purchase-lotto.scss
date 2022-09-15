@@ -171,7 +171,7 @@ label {
 
 input:checked + label {
     @include background-color(skyblue);
-    
+
    &:after{
        /*오른쪽으로 이동*/
        left: calc(100% - 5px);

@@ -1,6 +1,9 @@
+@mixin font-weight{
+    font-weight: bold;
+}
 
+@mixin open-btn{
 
-.open-btn{
     display: block;
     margin-top: 4rem;
     width: 100%;
@@ -8,14 +11,21 @@
     border-radius: 4px;
     cursor: pointer;
     border-style: none;
-    font-weight: bold;
 }
-
-.result-day{
-    font-weight: bold;
+@mixin result-day{
     font-size: 20px;
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 3rem;
+}
+
+.open-btn{
+    @include font-weight;
+    @include open-btn;
+}
+
+.result-day{
+    @include font-weight;
+    @include result-day;
 }
 
