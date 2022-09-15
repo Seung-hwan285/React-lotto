@@ -36,10 +36,11 @@
   
 
 - SCSS 변환
-  - [x] PurchaseLotto  ( CSS -> SCSS )
-  - [ ] PurchaseAmount ( CSS -> SCSS )
-  - [ ] WinnerNumber ( CSS -> SCSS )
-  - [ ] WinningResult ( CSS -> SCSS )
+  - [x] purchase-lotto  ( CSS -> SCSS )
+  - [x] lotto ( CSS -> SCSS )
+  - [ ] lotto-ball ( CSS -> SCSS )
+  - [ ] winning-number ( CSS -> SCSS )
+  - [ ] winning-result (CSS -> SCSS)
  
 # 4번
 - TypeScript 변환 

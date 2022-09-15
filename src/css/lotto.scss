@@ -1,15 +1,31 @@
-.lotto{
+@mixin lotto-padding{
+
     padding: 0 0 1.3rem;
 }
-.lotto-emoji{
-
+@mixin lotto-emoji{
     font-size: 2rem;
     line-height: 1.5rem;
 
     margin-right: 2rem;
 }
 
-.lotto-number{
+@mixin lotto-number{
     font-size: 20px;
     font-weight: bold;
+}
+
+.lotto{
+    @include lotto-padding;
+}
+
+
+.lotto-emoji{
+
+    @include lotto-emoji;
+
+}
+
+.lotto-number{
+
+    @include lotto-number;
 }
