@@ -153,33 +153,32 @@ label {
     cursor: pointer;
     border-radius: 100px;
 
+    &:after{
+        @include position(absolute);
+        @include width-height(30px,20px);
+        content: '';
+        top: 5px;
+        left: 5px;
+        background: #fff;
+        border-radius: 30px;
+        transition: 0.5s;
+    }
+
+
 }
 
-label:after {
-    @include position(absolute);
-    @include width-height(30px,20px);
-    content: '';
-    top: 5px;
-    left: 5px;
-    background: #fff;
-    border-radius: 30px;
-    transition: 0.5s;
-}
+
 
 input:checked + label {
     @include background-color(skyblue);
-}
-
-input:checked + label:after {
-    /*오른쪽으로 이동*/
-    left: calc(100% - 5px);
-    /*왼쪽으로 이동*/
-    transform: translateX(-100%);
-}
-
-label:active:after {
-    @include width(130px);
+    
+   &:after{
+       /*오른쪽으로 이동*/
+       left: calc(100% - 5px);
+       /*왼쪽으로 이동*/
+       transform: translateX(-100%);
+   }
 }
 
 
-/*로또 랜덤 번호*/
+

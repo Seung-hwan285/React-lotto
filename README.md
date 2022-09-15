@@ -38,12 +38,20 @@
 - SCSS 변환
   - [x] purchase-lotto  ( CSS -> SCSS )
   - [x] lotto ( CSS -> SCSS )
-  - [ ] lotto-ball ( CSS -> SCSS )
+  - [x] lotto-ball ( CSS -> SCSS )
   - [ ] winning-number ( CSS -> SCSS )
   - [ ] winning-result (CSS -> SCSS)
  
 # 4번
 - TypeScript 변환 
+  - [ ] PurchaseAmount ( Js -> TypeScript )
+  - [ ] PurchaseLotto ( Js -> TypeScript )
+  - [ ] WinnerNumber ( Js -> TypeScript ) 
+  - [ ] WinningResult ( Js -> TypeScript )
+
+# 5번
+- Cypress 테스트
+
 
 # 전체 프로젝트 현황판
 https://www.notion.so/React-db2d524684a94826a10521fa5bc6b496
