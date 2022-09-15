@@ -39,8 +39,8 @@
   - [x] purchase-lotto  ( CSS -> SCSS )
   - [x] lotto ( CSS -> SCSS )
   - [x] lotto-ball ( CSS -> SCSS )
-  - [ ] winning-number ( CSS -> SCSS )
-  - [ ] winning-result (CSS -> SCSS)
+  - [x] winning-number ( CSS -> SCSS )
+  - [x] winning-result (CSS -> SCSS)
  
 # 4번
 - TypeScript 변환 

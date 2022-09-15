@@ -1,5 +1,14 @@
-/*모달 디자인*/
-.winning-result-open{
+@mixin text-align-center{
+    text-align: center;
+}
+@mixin position-left-bottom($position : static ,$left :0 , $bottom :0){
+    position: $position;
+    left: $left;
+    bottom: $bottom;
+}
+
+
+@mixin winning-result-open{
     width: 400px;
     height: 500px;
     /* 최상단 위치 */
@@ -13,13 +22,18 @@
     border-radius: 5px;
 }
 
+/*모달 디자인*/
+.winning-result-open{
+    @include winning-result-open;
+}
+
 .result-table{
     padding: 1.5rem;
     margin-right: 2rem;
 }
 
 .winning-result-title{
-    text-align: center;
+    @include text-align-center;
 }
 
 .result-table-wrapper{
@@ -28,7 +42,7 @@
 }
 
 .table-data{
-    text-align: center;
+    @include text-align-center;
 }
 .winning-result-rate-of-return{
     text-align: right;
@@ -36,13 +50,11 @@
 }
 .result-btn{
     font-size: 20px;
-    position: fixed;
-    left: 9rem;
-    bottom: 3rem;
+    @include   position-left-bottom(fixed,9rem,3rem);
+
 }
 
 .winning-result-inner{
-    position: fixed;
-    left: 22rem;
-    bottom: 29rem;
+   @include position-left-bottom(fixed,22rem,29rem);
+
 }
