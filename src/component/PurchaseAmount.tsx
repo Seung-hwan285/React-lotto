@@ -6,8 +6,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {useRecoilState} from "recoil";
 import {textState} from "../atom/atom";
 
+interface PurchaseAmountProps{
+    setLottoList : (e:any)=>void;
+}
 
-function PurchaseAmount({setLottoList}){
+function PurchaseAmount({setLottoList} : PurchaseAmountProps){
 
     // atom 읽고 쓰게 하기 위해서는 useRecoilState 사용한다.
     // const [vaildMessenger,setVaildMessenger] =useState('');
@@ -15,29 +18,23 @@ function PurchaseAmount({setLottoList}){
     const [vaildMessenger, setVaildMessenger] = useRecoilState(textState);
 
 
-    const onSubmit=(e)=>{
+    const onSubmit=(e :React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
 
-        const money = e.target.input.value;
-
-
+        const money = e.currentTarget.input.value;
         const {change ,numOfLotto} = PayLotto(money);
-
 
         if(change > 0){
             alert(`현재 거스름 돈은 ${change} 원입니다`);
         }
-
         setLottoList(getLottoList({numOfLotto}));
-
-
     }
 
-    const onChange=(e)=>{
+    const onChange=(e :React.ChangeEvent<HTMLInputElement>)=>{
 
-        const currentValue =e.target.value;
+        const currentValue =e.currentTarget.value;
 
-        if(currentValue <1000){
+        if(parseInt(currentValue) <1000){
 
             setVaildMessenger(`1000원 미만은 입력 불가입니다.`);
 

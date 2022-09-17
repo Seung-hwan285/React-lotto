@@ -46,7 +46,7 @@
 - TypeScript 변환 
   - [x] App ( Js -> TypeScript )
   - [x] WinnerNumber ( Js -> TypeScript )
-  - [ ] PurchaseAmount ( Js -> TypeScript )
+  - [x] PurchaseAmount ( Js -> TypeScript )
   - [ ] PurchaseLotto ( Js -> TypeScript )
   - [ ] WinningResult ( Js -> TypeScript )
 
