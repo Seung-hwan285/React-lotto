@@ -11,7 +11,7 @@ import WinningResults from "./component/WinningResults";
 import {RecoilRoot} from "recoil";
 
 interface lottoListState {
-    lottoList : any[];
+    lottoList : number[];
 }
 
 

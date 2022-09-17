@@ -2,10 +2,12 @@
 import React from "react";
 import Lotto from "./Lotto";
 
+interface LottoGeneratorProps {
+    lottolist : number[];
+    displaySectionName: string;
+}
 
-function LottoGenerator({lottolist,displaySectionName}){
-
-
+function LottoGenerator({lottolist,displaySectionName} : LottoGeneratorProps){
 
     return(
 

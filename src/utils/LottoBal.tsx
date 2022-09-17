@@ -1,4 +1,8 @@
-function LottoBal({number}){
+interface LottoBallProps{
+    number : number;
+}
+
+function LottoBal({number} :LottoBallProps){
 
 
     let ballClassName;

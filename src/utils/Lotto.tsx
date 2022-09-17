@@ -1,8 +1,12 @@
 import {Component} from "react";
 import "../css/lotto.scss"
 
+interface LottoProps{
+    lotto : any;
+}
 
-function Lotto({lotto}){
+
+function Lotto({lotto} : LottoProps){
     return(
 
         <div className="lotto">

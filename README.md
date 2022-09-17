@@ -21,7 +21,7 @@
 
 # 2번
 - 함수형 컴포넌트로 변환 
-    - [x] Lotto.js  함수형 리펙토링
+    - [x] Lotto  함수형 리펙토링
     - [x] PurchaseAmount 함수형 리펙토링
     - [x] PurchaseLotto 함수형 리펙토링
     - [x] WinnerNumber 함수형 리펙토링
@@ -44,6 +44,8 @@
  
 # 4번
 - TypeScript 변환 
+
+  - [ ] utils (Js -> TypeScript )
   - [x] App ( Js -> TypeScript )
   - [x] WinnerNumber ( Js -> TypeScript )
   - [x] PurchaseAmount ( Js -> TypeScript )
