@@ -1,4 +1,4 @@
-# 리액트 연습 (React Hooks , Recoil , SCSS)
+# 리액트 연습 (React Hooks , Recoil ,Redux , SCSS)
 
 # 1번
 
@@ -44,13 +44,15 @@
  
 # 4번
 - TypeScript 변환 
+  - [x] App ( Js -> TypeScript )
+  - [x] WinnerNumber ( Js -> TypeScript )
   - [ ] PurchaseAmount ( Js -> TypeScript )
   - [ ] PurchaseLotto ( Js -> TypeScript )
-  - [ ] WinnerNumber ( Js -> TypeScript ) 
   - [ ] WinningResult ( Js -> TypeScript )
 
 # 5번
-- Cypress 테스트
+- Redux 변환
+
 
 
 # 전체 프로젝트 현황판

@@ -9,7 +9,12 @@ import "../css/winning-number.scss"
 import "../css/lotto.scss"
 import "../css/lotto-ball.scss"
 
-function WinnerNumber({onShowModal}){
+interface WinnNumberProps {
+    onShowModal : (e: any)=>void;
+    lottoList : any[];
+}
+
+function WinnerNumber({onShowModal,lottoList} : WinnNumberProps){
 
     const [isShowWinningNumbers,setShow] =useRecoilState(showState);
 

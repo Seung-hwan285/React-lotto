@@ -1,6 +1,6 @@
 import './App.css';
 
-import {Component, useEffect, useState} from "react";
+import React, {Component, useEffect, useState} from "react";
 
 import PurchaseAmount from "./component/PurchaseAmount";
 import createLotto from "./service/createLotto";
@@ -10,21 +10,26 @@ import WinnerNumber from "./component/WinnerNumber";
 import WinningResults from "./component/WinningResults";
 import {RecoilRoot} from "recoil";
 
+interface lottoListState {
+    lottoList : any[];
+}
 
 
 function App(){
-  const [lottoList,setLottoList] = useState([]);
+
+  const [lottoList,setLottoList] = useState<lottoListState[]>([]);
   const isPurchesed = Boolean(lottoList.length);
 
 
   const [isShowModal,setIsShowModal]= useState(false);
 
 
-  const onShowModal=(e)=>{
-      setIsShowModal(!e.target.value);
+  const onShowModal=(e:React.MouseEvent<HTMLButtonElement>)=>{
+      const target = e.target as HTMLButtonElement;
+      setIsShowModal(!target.value);
   }
 
-  const onCloseModal=(e)=>{
+  const onCloseModal=(e:boolean)=>{
       setIsShowModal(false);
   }
 
@@ -36,9 +41,7 @@ function App(){
   }
 
   return(
-
-
-<RecoilRoot>
+      <RecoilRoot>
       <div className="app">
 
         <h1 className="header">🎱  행운의 로또</h1>
@@ -51,7 +54,7 @@ function App(){
 
           {isPurchesed ? <WinnerNumber
               onShowModal = {onShowModal}
-              lottolist={lottoList}
+              lottoList={lottoList}
 
           /> :null}
 
@@ -66,6 +69,8 @@ function App(){
 </RecoilRoot>
   )
 }
+
+
 
 //
 //
