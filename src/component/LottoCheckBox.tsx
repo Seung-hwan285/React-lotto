@@ -1,4 +1,7 @@
-function LottoCheckBox({onChangeToggle}){
+interface LottoCheckBoxProps{
+    onChangeToggle : (e:any)=>void;
+}
+function LottoCheckBox({onChangeToggle} : LottoCheckBoxProps){
 
     return(
 

@@ -2,35 +2,41 @@ import React, {Component, useEffect, useState} from 'react';
 import {
     BONUS_CHECK_REQUIRED_COUNT,
     BONUS_COUNT,
-    BUNUS_NUMBER,
     RESULT_TABLE_DATA,
     RESULT_TABLE_KEY_LIST, WINNING_NUMBER, WINNING_NUMBER_BUNUS_NUMBER
 } from "../utils/LottoRules";
 import "../css/winning-result.scss"
-import {useRecoilState} from "recoil";
-import {matchCountState, resultCount, resultNumberCount} from "../atom/atom";
-
-
-function WinningResults({onCloseModal,onReset,lottoList}){
 
 
 
-    const [matchCount,setMatchCount] =useRecoilState(matchCountState);
+interface WinningResultsProps{
+    onCloseModal : (e:any)=>void;
+    onReset : (e: any) =>void;
+    lottoList : any[];
+}
+
+
+
+function WinningResults({onCloseModal,onReset,lottoList} : WinningResultsProps){
+
+
+    const [matchCount,setMatchCount] =useState<{[index : number]:any}>({});
 
 
     const getMatchCount=()=>{
 
-        const matchCount={};
+        // 객체가 가지고 있는 인덱스 타입 정의
+        const matchCount: {[index : number]:any}={};
 
 
         const winningNumbers= WINNING_NUMBER;
         const bonunsNumber = WINNING_NUMBER_BUNUS_NUMBER;
 
-        lottoList.forEach((lotto)=>{
-            // 같은 번호가 몇개나오는지 체크
-            let resultCount = lotto.reduce((a,b)=>a+ Number(winningNumbers.includes(b)),0);
-            console.log(resultCount);
+        console.log(lottoList);
+        lottoList.forEach((lotto :any)=>{
 
+            // 같은 번호가 몇개나오는지 체크
+            let resultCount = lotto.reduce((a :number ,b :number)=>a+ Number(winningNumbers.includes(b)),0);
 
             if( resultCount === BONUS_CHECK_REQUIRED_COUNT && lotto.includes(bonunsNumber)){
                 resultCount+=BONUS_COUNT;
@@ -44,7 +50,7 @@ function WinningResults({onCloseModal,onReset,lottoList}){
     }
 
     useEffect(()=>{
-        const getMatch = getMatchCount();
+        const getMatch= getMatchCount();
         setMatchCount(getMatch);
     },[]);
 
@@ -67,7 +73,7 @@ function WinningResults({onCloseModal,onReset,lottoList}){
                     <th>당첨금</th>
                     <th>개수</th>
 
-                {RESULT_TABLE_KEY_LIST.map(($el)=>(
+                {RESULT_TABLE_KEY_LIST.map(($el : number)=>(
                     <TableRow tablekey={$el} resultCount={matchCount[$el]}/>
                 ))}
                 </table>
@@ -171,12 +177,14 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 //     }
 // }
 
+interface TableRowProps{
+    tablekey : number;
+    resultCount : number;
+}
 
-function TableRow({tablekey,resultCount}){
-
+function TableRow({tablekey,resultCount} : TableRowProps){
 
     return(
-
         <tr>
             <td className="table-data">{RESULT_TABLE_DATA[tablekey].DESCRIPTION}</td>
             <td className="table-data">{RESULT_TABLE_DATA[tablekey].PRIZE}</td>

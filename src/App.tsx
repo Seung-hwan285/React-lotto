@@ -8,20 +8,20 @@ import getLottoList from "./service/getLottoList";
 import PurchaseLotto from "./component/PurchaseLotto";
 import WinnerNumber from "./component/WinnerNumber";
 import WinningResults from "./component/WinningResults";
-import {RecoilRoot} from "recoil";
+import {RecoilRoot, useRecoilState} from "recoil";
+import {LottoListState, ShowinningNumber} from "./atom/atom";
 
 
 interface lottoListState {
-    lottoList : any[];
+    lottoList : unknown[];
 }
+
 
 function App(){
 
-  const [lottoList,setLottoList] = useState<lottoListState[]>([]);
+  const [lottoList,setLottoList] = useRecoilState<lottoListState[]>(LottoListState);
   const isPurchesed = Boolean(lottoList.length);
-
-
-  const [isShowModal,setIsShowModal]= useState(false);
+  const [isShowModal,setIsShowModal]= useRecoilState(ShowinningNumber);
 
 
   const onShowModal=(e:React.MouseEvent<HTMLButtonElement>)=>{

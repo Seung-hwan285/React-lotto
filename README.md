@@ -49,8 +49,8 @@
   - [x] App ( Js -> TypeScript )
   - [x] WinnerNumber ( Js -> TypeScript )
   - [x] PurchaseAmount ( Js -> TypeScript )
-  - [ ] PurchaseLotto ( Js -> TypeScript )
-  - [ ] WinningResult ( Js -> TypeScript )
+  - [x] PurchaseLotto ( Js -> TypeScript )
+  - [x] WinningResult ( Js -> TypeScript )
   
 
 
