@@ -11,7 +11,6 @@ function LottoBal({number} :LottoBallProps){
     if(number < 10){
         ballClassName='zeros';
     }else if(number <20){
-        console.log(number);
         ballClassName='tens';
     }else if(number < 30){
         ballClassName='twenties';

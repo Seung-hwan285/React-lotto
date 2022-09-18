@@ -9,9 +9,13 @@ import LottoCheckBox from "./LottoCheckBox";
 import {useRecoilState} from "recoil";
 import {ToggleState} from "../atom/atom";
 
+interface PurchaseLottoProps{
+    lottoList  : any[];
+
+}
 
 
-function PurchaseLotto({lottolist}){
+function PurchaseLotto({lottoList} : PurchaseLottoProps){
 
     const [isToggle,setToggle] =useRecoilState(ToggleState);
 
@@ -21,16 +25,16 @@ function PurchaseLotto({lottolist}){
         displaySectionName+='toggle';
     }
 
-    const onChangeToggle=(e)=>{
+    const onChangeToggle=(e : any)=>{
         setToggle(e.target.checked);
     }
 
     return(
         <div className="purchase-lotto-container">
 
-            <LottoCount lottolist={lottolist} onChangeToggle={onChangeToggle}/>
+            <LottoCount lottoList={lottoList}/>
             <LottoCheckBox onChangeToggle={onChangeToggle}/>
-            <LottoGenerator lottolist={lottolist} displaySectionName={displaySectionName}/>
+            <LottoGenerator lottoList={lottoList} displaySectionName={displaySectionName}/>
         </div>
     )
 }

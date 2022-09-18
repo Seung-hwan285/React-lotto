@@ -10,10 +10,10 @@ import WinnerNumber from "./component/WinnerNumber";
 import WinningResults from "./component/WinningResults";
 import {RecoilRoot} from "recoil";
 
-interface lottoListState {
-    lottoList : number[];
-}
 
+interface lottoListState {
+    lottoList : any[];
+}
 
 function App(){
 
@@ -50,17 +50,17 @@ function App(){
           <PurchaseAmount setLottoList={setLottoList}/>
 
 
-          {isPurchesed ? <PurchaseLotto lottolist={lottoList}/> :null}
+
+          {isPurchesed ? <PurchaseLotto lottoList={lottoList}/> :null}
 
           {isPurchesed ? <WinnerNumber
               onShowModal = {onShowModal}
-              lottoList={lottoList}
 
           /> :null}
 
           {isShowModal ? <WinningResults
               onReset={onReset}
-            onCloseModal={onCloseModal}
+                onCloseModal={onCloseModal}
 
               lottoList={lottoList}
           />: null}

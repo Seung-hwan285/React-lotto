@@ -3,17 +3,17 @@ import React from "react";
 import Lotto from "./Lotto";
 
 interface LottoGeneratorProps {
-    lottolist : number[];
+    lottoList : number[];
     displaySectionName: string;
 }
 
-function LottoGenerator({lottolist,displaySectionName} : LottoGeneratorProps){
+function LottoGenerator({lottoList,displaySectionName} : LottoGeneratorProps){
 
     return(
 
         <section className={displaySectionName}>
                 <span>
-                    {lottolist.map(($el,index)=>(
+                    {lottoList.map(($el,index)=>(
                         <Lotto lotto={$el} key={index}/>
                     ))}
             </span>

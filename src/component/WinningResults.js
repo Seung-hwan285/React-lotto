@@ -8,11 +8,10 @@ import {
 } from "../utils/LottoRules";
 import "../css/winning-result.scss"
 import {useRecoilState} from "recoil";
-import {matchCountState} from "../atom/atom";
+import {matchCountState, resultCount, resultNumberCount} from "../atom/atom";
 
 
 function WinningResults({onCloseModal,onReset,lottoList}){
-
 
 
 
@@ -21,27 +20,27 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 
     const getMatchCount=()=>{
 
-        const match={};
+        const matchCount={};
 
 
         const winningNumbers= WINNING_NUMBER;
         const bonunsNumber = WINNING_NUMBER_BUNUS_NUMBER;
 
-
-
-
         lottoList.forEach((lotto)=>{
             // 같은 번호가 몇개나오는지 체크
-            let numOfMatch = lotto.reduce((a,b)=>a+ Number(winningNumbers.includes(b)),0);
+            let resultCount = lotto.reduce((a,b)=>a+ Number(winningNumbers.includes(b)),0);
+            console.log(resultCount);
 
-            if( numOfMatch === BONUS_CHECK_REQUIRED_COUNT && lotto.includes(bonunsNumber)){
-                numOfMatch+=BONUS_COUNT;
+
+            if( resultCount === BONUS_CHECK_REQUIRED_COUNT && lotto.includes(bonunsNumber)){
+                resultCount+=BONUS_COUNT;
             }
 
-            match[numOfMatch] =match[numOfMatch] ===undefined ?  1: match[matchCount]+1;
+            matchCount[resultCount] =matchCount[resultCount] ===undefined ?  1: matchCount[resultCount]+1;
         });
 
-        return match;
+
+        return matchCount;
     }
 
     useEffect(()=>{
@@ -80,7 +79,7 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 }
 
 
-//
+
 // class WinningResults extends Component {
 //     constructor(props) {
 //         super(props);
@@ -107,12 +106,13 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 //     getMatchCount(){
 //
 //         const matchCount = {};
-//         const { winningNumbers, bonusNumber } = this.props.drawNumber;
+//         const winningNumbers= WINNING_NUMBER;
+//         const bonunsNumber = WINNING_NUMBER_BUNUS_NUMBER;
 //
 //         this.props.lottoList.forEach((lotto) => {
 //             let numOfMatch = lotto.reduce((acc, cur) => acc + Number(winningNumbers.includes(cur)), 0);
 //
-//             if (numOfMatch === BONUS_CHECK_REQUIRED_COUNT && lotto.includes(bonusNumber)) {
+//             if (numOfMatch === BONUS_CHECK_REQUIRED_COUNT && lotto.includes(bonunsNumber)) {
 //                 numOfMatch += BONUS_COUNT;
 //             }
 //             matchCount[numOfMatch] = matchCount[numOfMatch] === undefined ? 1 : matchCount[numOfMatch] + 1;
@@ -138,17 +138,17 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 //                     <table className="result-table">
 //                         {/*제목*/}
 //                         <thead className="table-row">
-//                             <th>
-//                                 구분
-//                             </th>
+//                         <th>
+//                             구분
+//                         </th>
 //
-//                             <th>
-//                                 당첨금
-//                             </th>
+//                         <th>
+//                             당첨금
+//                         </th>
 //
-//                             <th>
-//                                 개수
-//                             </th>
+//                         <th>
+//                             개수
+//                         </th>
 //                         </thead>
 //
 //                         <tbody>
@@ -172,8 +172,9 @@ function WinningResults({onCloseModal,onReset,lottoList}){
 // }
 
 
-function TableRow({resultCount,tablekey}){
-    console.log(resultCount);
+function TableRow({tablekey,resultCount}){
+
+
     return(
 
         <tr>

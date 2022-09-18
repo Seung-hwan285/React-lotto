@@ -1,5 +1,6 @@
 import {atom} from "recoil";
 
+
 export const textState = atom({
     key: 'textState',
     default: '',
@@ -20,4 +21,10 @@ export const showState=atom({
 export const matchCountState=atom({
     key : 'match',
     default : {},
+})
+
+
+export const resultNumberCount=atom({
+    key : 'resultCount',
+    default: 0,
 })

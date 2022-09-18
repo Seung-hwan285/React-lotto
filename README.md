@@ -1,4 +1,4 @@
-# 리액트 연습 (React Hooks , Recoil ,Redux , SCSS)
+# 리액트 연습 (React Hooks , Recoil ,Redux SCSS)
 
 # 1번
 
@@ -45,15 +45,13 @@
 # 4번
 - TypeScript 변환 
 
-  - [ ] utils (Js -> TypeScript )
+  - [x] utils (Js -> TypeScript )
   - [x] App ( Js -> TypeScript )
   - [x] WinnerNumber ( Js -> TypeScript )
   - [x] PurchaseAmount ( Js -> TypeScript )
   - [ ] PurchaseLotto ( Js -> TypeScript )
   - [ ] WinningResult ( Js -> TypeScript )
-
-# 5번
-- Redux 변환
+  
 
 
 
