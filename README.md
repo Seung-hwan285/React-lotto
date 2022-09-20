@@ -1,5 +1,8 @@
 # 리액트 연습 (React Hooks , Recoil ,Redux SCSS)
 
+# 개요
+이번에 학습한 SCSS , Recoil 조합을 리액트에서 연습하기 위한 repository 입니다.
+
 # 1번
 
 - 구입금액 입력
@@ -51,7 +54,10 @@
   - [x] PurchaseAmount ( Js -> TypeScript )
   - [x] PurchaseLotto ( Js -> TypeScript )
   - [x] WinningResult ( Js -> TypeScript )
-  
+
+# 5번
+- Redux 변환
+  - [ ]
 
 
 
